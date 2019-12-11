@@ -18,11 +18,14 @@ The final model implemented is Siamese LSTM to classify pairs of sentences as ei
 ## Model architecture
 * Input1 -> LSTM1(128)
 * Input2 -> LSTM2(128)
-* Concatenate[LSTM1, LSTM2]
+* subtract[LSTM1, LSTM2]
 * Dense(128, ReLu) -> Dense(64, ReLu) -> Dense(1, Sigmoid)
 
 ## Results
-* __25 epochs__
+* __40 epochs__
 * loss: 0.5062 - acc: 0.7699
-* val_loss: 0.4691 - val_acc: 0.7777
+* val_loss: 0.389 - val_acc: 0.823
 * improvements will be made, tune parameters
+
+* for inference check __GetScore.py__
+* Included Trained LSTM in rep, link to Word2vec embedding
