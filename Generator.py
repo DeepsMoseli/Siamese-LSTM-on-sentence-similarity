@@ -4,7 +4,8 @@ Created on Mon Nov 18 14:40:52 2019
 generator function to use model.fit_generator
 Majority of threadsafe_iter code adopted from: 
 https://github.com/Cheng-Lin-Li/SegCaps/blob/master/utils/threadsafe.py
-@author: Deeps
+@author: Deeps Moseli
+For using keras model.fit_generator.
 """
 import threading
 import numpy as np
