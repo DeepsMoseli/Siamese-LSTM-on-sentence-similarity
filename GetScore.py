@@ -18,6 +18,7 @@ from keras.models import load_model
 model1 = Word2Vec.load("word2vec_256.model")
 siamese_model = load_model('my_model_siamese_Lstm_final.h5')
 
+#if ur a statistician, get mad about my naming of this function. then continue with life lol
 def inference(x1,x2):
     #tokenize and pad
     x1=wt(x1.lower().strip())
@@ -54,7 +55,6 @@ def inference(x1,x2):
     sim_prob = siamese_model.predict([x1,x2])
     return sim_prob[0][0]
 
-
 def score_all(tts,script_lists):
     # this function takes tts as a string
     # and script_lists as a long list of the script strings
@@ -75,8 +75,6 @@ def score_all(tts,script_lists):
         sent.append(hold)
     result = [inference(tts,ref_) for ref_ in sent]
     return max(result)
-
-
 
 script = """Note that if we were to run the t-SNE again with different parameters, 
                 we may observe some similarities to this result, but we’re not 
@@ -109,7 +107,6 @@ text_to_speech = ["Does France really have a poor work ethic or is it just myth"
                   "Is it a common thing to like food when stressed?",
                   "In america the biggest economy or not in 2019?",
                   "I just want the semester to end,lol im so tired i cant even sleep anymore"]
-
 
 scores = []
 pbar = tqdm(range(len(text_to_speech)))
